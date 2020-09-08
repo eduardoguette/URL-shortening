@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__content">
+          <img class="header__logo" src="./img/logo.svg" alt="logo" />
+          <input type="checkbox" id="menu" class="menu__checkbox" />
+          <ul class="menu">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Resources</a></li>
+            <hr class="separador" />
+            <li class="log"><a href="#">Login</a></li>
+            <li><a class="menu__button log" href="#">Sign Up</a></li>
+          </ul>
+          <label for="menu" class="menu__button">
+            <img src="./img/ham-logo.svg" height="25px" alt="ham" />
+          </label>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="wrapper">
+          <div class="hero__container">
+            <div class="container-image">
+              <img class="hero__imagen" src="./img/illustration-working.svg" height="340" alt="illustration-working" />
+            </div>
+            <div class="wrapper">
+              <h1>More than just shorter links</h1>
+              <p>Build your brand’s recognition and get detailed insights on how your links are performing.</p>
+              <button class="btn__ppal">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="shortern">
+        <div class="wrapper">
+          <div class="shortern__container">
+            <form action="#">
+              <div class="shortern__form-control">
+                <input type="text" required placeholder="Shorten a link here..." />
+              </div>
+              <button class="shotern__btn">Shorten It!</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="statistics">
+        <div class="wrapper">
+          <div class="statistics__container">
+            <div class="statistics__advanced">
+              <h2>Advanced Statistics</h2>
+              <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
+            </div>
+            <div class="statistics__card card-first">
+              <div class="statistics__card-container-image">
+                <img src="./img/icon-brand-recognition.svg" alt="brand-recognition" />
+              </div>
+              <h3>Brand Recognition</h3>
+              <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
+            </div>
+            <div class="statistics__card">
+              <div class="statistics__card-container-image">
+                <img src="./img/icon-detailed-records.svg" alt="detailed-records" />
+              </div>
+              <h3>Detailed Records</h3>
+              <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
+            </div>
+            <div class="statistics__card">
+              <div class="statistics__card-container-image">
+                <img src="./img/icon-fully-customizable.svg" alt="brand-recognition" />
+              </div>
+              <h3>Fully Customizable</h3>
+              <p>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="boost">
+        <div class="wrapper">
+          <div class="boost__container">
+            <h2>Boost your links today</h2>
+            <button class="btn__ppal">Get Started</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__container">
+          <div class="container__logo">
+            <img src="./img/logo-white.svg" alt="logo" />
+          </div>
+          <ul class="features">
+            <li>
+              <a href="#" class="first-item">Features</a>
+            </li>
+            <li>
+              <a href="#">Link Shortening</a>
+            </li>
+            <li>
+              <a href="#">Branded Links</a>
+            </li>
+            <li>
+              <a href="#"> Analytics</a>
+            </li>
+          </ul>
+          <ul class="resources">
+            <li>
+              <a href="#" class="first-item">Resources</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            <li>
+              <a href="#">Developers</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+          </ul>
+          <ul class="resources">
+            <li>
+              <a href="#" class="first-item">Company</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Our Team</a>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Eduardo Guette</a>.</div>
+    </footer>
+  </body>
+</html>
