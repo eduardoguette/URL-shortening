@@ -48,6 +48,7 @@ body {
   margin: auto;
   z-index: 1;
   width: 325px;
+  max-width: 100%;
   display: block;
 }
 .header .menu__checkbox:checked ~ .menu .separador {
@@ -119,6 +120,7 @@ body {
 .hero__container .wrapper .btn__ppal {
   font-family: "Poppins", sans-serif;
   width: 180px;
+  max-width: 100%;
   padding: 14px 24px;
   background-color: #2acfcf;
   border-radius: 50px;
@@ -144,6 +146,13 @@ body {
   background: url("../img/bg-shorten-mobile.svg") top -30px left 70px no-repeat;
   background-size: contain;
   background-color: #3b3054;
+}
+.shortern .wrapper .shortern__container .error-input {
+  color: red;
+  font-size: 0.8em;
+  font-style: italic;
+  display: none;
+  padding-top: 1em;
 }
 .shortern .wrapper .shortern__container .shortern__form-control input {
   width: 100%;
@@ -260,6 +269,7 @@ body {
 .boost__container button {
   font-family: "Poppins", sans-serif;
   width: 180px;
+  max-width: 100%;
   padding: 14px 24px;
   background-color: #2acfcf;
   border-radius: 50px;

@@ -51,14 +51,16 @@
           <div class="shortern__container">
             <form action="#">
               <div class="shortern__form-control">
-                <input type="text" required placeholder="Shorten a link here..." />
+                <input type="text" placeholder="Shorten a link here..." id="shortern__input" />
+                <small class="error-input">Please add a link</small>
               </div>
-              <button class="shotern__btn">Shorten It!</button>
+              <button class="shotern__btn" type="submit" id="shortern__btn">Shorten It!</button>
             </form>
+            
           </div>
         </div>
       </section>
-
+      
       <section class="statistics">
         <div class="wrapper">
           <div class="statistics__container">
@@ -154,5 +156,6 @@
       </div>
       <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Eduardo Guette</a>.</div>
     </footer>
+    <script src="./js/main.js"></script>
   </body>
 </html>

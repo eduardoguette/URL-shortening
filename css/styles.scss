@@ -30,6 +30,7 @@ body {
 @mixin btn-ppal {
   font-family: $font-family;
   width: 180px;
+  max-width: 100%;
   padding: 14px 24px;
   background-color: $Cyan;
   border-radius: 50px;
@@ -75,6 +76,7 @@ body {
         margin: auto;
         z-index: 1;
         width: 325px;
+        max-width: 100%;
         display: block;
         .separador {
           margin: auto;
@@ -103,6 +105,7 @@ body {
             background-color: $Cyan;
             border-radius: 100px;
             font-size: 1em;
+            
           }
         }
       }
@@ -168,6 +171,13 @@ body {
       background: url("../img/bg-shorten-mobile.svg") top -30px left 70px no-repeat;
       background-size: contain;
       background-color: $DarkViolet;
+      .error-input{
+        color: red;
+        font-size: .8em;
+        font-style: italic;
+        display: none;
+        padding-top: 1em;
+      }
       .shortern__form-control {
         input {
           width: 100%;
