@@ -4,9 +4,8 @@ Es una aplicación que nos permite reducir la longitud de nuestras urls. Y estas
 
 ### Project ScreenShots
 <!--  -->
-<!-- ![photo](https://github.com/eduardoguette/FanaticsApp/blob/master/Screenshot_1.png?raw=true) -->
-<!-- ![photo](https://github.com/eduardoguette/FanaticsApp/blob/master/Screenshot_2.png?raw=true) -->
-<!-- ![photo](https://github.com/eduardoguette/FanaticsApp/blob/master/Screenshot_3.png?raw=true) -->
+![photo](https://github.com/eduardoguette/URL-shortening/blob/master/Screenshot1.png?raw=true) 
+![photo](https://github.com/eduardoguette/URL-shortening/blob/master/Screenshot2.png)
 
 ### Instrucciones de intalación y configuración
 
