@@ -134,11 +134,8 @@ body {
   width: 340px;
   max-width: 100%;
   margin: auto;
-  padding-top: 3em;
 }
 .shortern .wrapper .shortern__container {
-  position: relative;
-  z-index: 2;
   margin: 1em auto;
   padding: 1.3em;
   border-radius: 10px;
@@ -177,12 +174,60 @@ body {
   height: 2.5em;
 }
 
+.shorterns-urls .wrapper {
+  width: 90%;
+  margin: auto;
+  max-width: 100%;
+}
+.shorterns-urls__container .shorterns-urls__card {
+  border-radius: 5px;
+  padding: 1em;
+  font-weight: 500;
+  background-color: white;
+  width: 340px;
+  max-width: 100%;
+  margin: auto;
+}
+.shorterns-urls__container .shorterns-urls__card a {
+  text-decoration: none;
+}
+.shorterns-urls__container .shorterns-urls__card hr {
+  width: 400px;
+  max-width: 100%;
+  opacity: 0.4;
+  margin: 0.3em 0;
+}
+.shorterns-urls__container .shorterns-urls__card .shorterns-urls__url {
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.shorterns-urls__container .shorterns-urls__card .shorterns-urls__url:visited {
+  color: #232127;
+}
+.shorterns-urls__container .shorterns-urls__card .short-url {
+  font-size: 0.8em;
+  color: #2acfcf;
+  font-weight: 600;
+}
+.shorterns-urls__container .shorterns-urls__card .short-url:visited {
+  color: inherit;
+}
+.shorterns-urls__container .shorterns-urls__card button {
+  width: 400px;
+  max-width: 100%;
+  background-color: #2acfcf;
+  border-radius: 5px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: 500;
+  padding: 0.3em 1em;
+  margin: auto;
+  margin-top: 0.5em;
+}
+
 .statistics {
-  position: relative;
-  top: -90px;
-  z-index: -1;
   background-color: #f0f1f6;
-  padding-bottom: 1em;
 }
 .statistics .wrapper {
   width: 90%;
