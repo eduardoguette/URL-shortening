@@ -130,6 +130,10 @@ body {
   letter-spacing: 0.04em;
 }
 
+.shortern {
+  position: relative;
+  z-index: 3;
+}
 .shortern .wrapper {
   width: 340px;
   max-width: 100%;
@@ -145,9 +149,10 @@ body {
   background-color: #3b3054;
 }
 .shortern .wrapper .shortern__container .error-input {
-  color: red;
+  color: #f46262;
   font-size: 0.8em;
-  font-style: italic;
+  font-weight: 600;
+  font-style: oblique;
   display: none;
   padding-top: 1em;
 }
@@ -158,6 +163,9 @@ body {
   padding: 1em;
   font-family: "Poppins", sans-serif;
   border: none;
+}
+.shortern .wrapper .shortern__container .shortern__form-control input::placeholder {
+  font-weight: 600;
 }
 .shortern .wrapper .shortern__container button {
   margin-top: 1em;
@@ -171,15 +179,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2.5em;
+  height: 3.2em;
+  font-weight: 600;
+  font-size: 0.8em;
 }
 
+.shorterns-urls {
+  background-color: #f0f1f6;
+  padding-top: 8em;
+  position: relative;
+  top: -100px;
+}
 .shorterns-urls .wrapper {
   width: 90%;
   margin: auto;
   max-width: 100%;
 }
+.shorterns-urls__container {
+  display: grid;
+  row-gap: 2em;
+}
 .shorterns-urls__container .shorterns-urls__card {
+  transition: 1s ease;
+  position: relative;
+  top: -30px;
   border-radius: 5px;
   padding: 1em;
   font-weight: 500;
@@ -210,7 +233,7 @@ body {
   font-weight: 600;
 }
 .shorterns-urls__container .shorterns-urls__card .short-url:visited {
-  color: inherit;
+  color: #2acfcf;
 }
 .shorterns-urls__container .shorterns-urls__card button {
   width: 400px;
@@ -218,16 +241,19 @@ body {
   background-color: #2acfcf;
   border-radius: 5px;
   border: none;
-  font-family: "Poppins", sans-serif;
   color: white;
-  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
   padding: 0.3em 1em;
   margin: auto;
   margin-top: 0.5em;
 }
 
 .statistics {
+  margin-top: -6em;
   background-color: #f0f1f6;
+  padding-bottom: 3em;
 }
 .statistics .wrapper {
   width: 90%;
@@ -238,6 +264,7 @@ body {
   font-size: 1.4em;
   text-align: center;
   color: #35323e;
+  padding-top: 2em;
 }
 .statistics .wrapper .statistics__advanced p {
   padding-top: 0.8em;
@@ -246,8 +273,6 @@ body {
   font-size: 0.9em;
 }
 .statistics .wrapper .statistics__card {
-  position: relative;
-  z-index: 7;
   margin: auto;
   background-color: white;
   margin: 3em auto;
@@ -289,7 +314,7 @@ body {
   content: "";
   height: 90px;
   width: 8px;
-  position: absolute;
+  position: relative;
   top: -90px;
   background-color: #2acfcf;
 }

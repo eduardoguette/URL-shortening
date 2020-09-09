@@ -155,6 +155,8 @@ body {
 }
 
 .shortern {
+  position: relative;
+  z-index: 3;
   .wrapper {
     width: 340px;
     max-width: 100%;
@@ -168,9 +170,10 @@ body {
       background-size: contain;
       background-color: $DarkViolet;
       .error-input {
-        color: red;
+        color: $Red;
         font-size: 0.8em;
-        font-style: italic;
+        font-weight: 600;
+        font-style: oblique;
         display: none;
         padding-top: 1em;
       }
@@ -182,6 +185,9 @@ body {
           padding: 1em;
           font-family: $font-family;
           border: none;
+          &::placeholder{
+            font-weight: 600;
+          }
         }
       }
       button {
@@ -196,21 +202,32 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 2.5em;
+        height: 3.2em;
+        font-weight: 600;
+        font-size: .8em;
+
       }
     }
   }
 }
 
 .shorterns-urls {
-
+  background-color: $GrayBack;
+  padding-top: 8em;
+  position: relative;
+  top: -100px;
   .wrapper {
     width: 90%;
     margin: auto;
     max-width: 100%;
   }
   &__container {
+    display: grid;
+    row-gap: 2em;
     .shorterns-urls__card {
+      transition: 1s ease;
+      position: relative;
+      top: -30px;
       border-radius: 5px;
       padding: 1em;
       font-weight: 500;
@@ -239,7 +256,7 @@ body {
         color: $Cyan;
         font-weight: 600;
         &:visited {
-          color: inherit;
+          color: $Cyan;
         }
       }
       button {
@@ -248,9 +265,10 @@ body {
         background-color: $Cyan;
         border-radius: 5px;
         border: none;
-        font-family: $font-family;
         color: white;
-        font-weight: 500;
+        font-family: $font-family;
+        font-weight: 600;
+        font-size: .9em;
         padding: 0.3em 1em;
         margin: auto;
         margin-top: .5em;
@@ -260,7 +278,9 @@ body {
 }
 
 .statistics {
+  margin-top: -6em;
   background-color: $GrayBack;
+  padding-bottom: 3em;
   .wrapper {
     width: 90%;
     margin: auto;
@@ -270,6 +290,7 @@ body {
         font-size: 1.4em;
         text-align: center;
         color: $VeryDarkBlue;
+        padding-top: 2em;
       }
       p {
         padding-top: 0.8em;
@@ -279,8 +300,7 @@ body {
       }
     }
     .statistics__card {
-      position: relative;
-      z-index: 7;
+     
       margin: auto;
       background-color: white;
       margin: 3em auto;
@@ -324,7 +344,7 @@ body {
         content: "";
         height: 90px;
         width: 8px;
-        position: absolute;
+        position: relative;
         top: -90px;
         background-color: $Cyan;
       }

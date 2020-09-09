@@ -6,31 +6,93 @@ const shorterns = document.querySelector(".shorterns-urls__container");
 
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
+  let newShorten = "";
   if ($input.value.trim() === "") {
     mensajeError.style.display = "Block";
   } else {
     getUrl($input.value).then((data) => {
-      data = "https://rel.ink/" + data[0].hashid;
-      shorterns.innerHTML = `
-      <div class="shorterns-urls__card">
-      <a class="shorterns-urls__url">${$input.value.trim}</a>
-      <hr class="separador" />
-      <a class="short-url">${data}</a>
-      <button class="btn-copy">Copy</button>
-      </div>`;
-      document.querySelector(".short-url").setAttribute("href", data);
-      document.querySelector(".short-url").setAttribute("target", "_blank");
-      document.querySelector(".shorterns-urls__url").setAttribute("href", $input.value.trim());
-      document.querySelector(".shorterns-urls__url").setAttribute("target", "_blank");
-      if ($input.value.trim().length > 35) {
-        console.log("siii");
-        document.querySelector(".shorterns-urls__url").innerHTML = document.getElementById("shortern__input").value.slice(0, 35) + "...";
+      newShorten = data[0];
+      if (!localStorage.getItem("arraysShorten")) {
+        localStorage.setItem("arraysShorten", JSON.stringify([newShorten]));
+      } else {
+        let tmpLS = JSON.parse(localStorage.getItem("arraysShorten"));
+        tmpLS = [...tmpLS, newShorten];
+        localStorage.setItem("arraysShorten", JSON.stringify(tmpLS));
       }
     });
+    setTimeout(() => {
+      render();
+    }, 2000);
   }
 });
 
-async function getUrl(url) {
+if (localStorage.getItem("arraysShorten")) {
+  render();
+}
+
+function render() {
+  let arrayRender = JSON.parse(localStorage.getItem("arraysShorten"));
+  shorterns.innerHTML = "";
+  arrayRender.map((elem, i) => {
+    let urlShort = "https://rel.ink/" + elem.hashid;
+    let divContainer = document.createElement("div");
+    divContainer.className = "shorterns-urls__card";
+    if (elem.url.length > 35) {
+      var url_cor = elem.url.slice(0, 35) + "...";
+      divContainer.innerHTML = `
+      <a href=${elem.url} class="shorterns-urls__url">${url_cor}</a>
+      <hr class="separador" />
+      <a href=${urlShort} class="short-url">${urlShort}</a>
+      <button class="btn-copy" id=${i} data-clipboard-text=${urlShort}>Copy</button>
+      `;
+    } else {
+      divContainer.innerHTML = `
+      <a href=${elem.url} class="shorterns-urls__url">${elem.url}</a>
+      <hr class="separador" />
+      <a href=${urlShort} class="short-url">${urlShort}</a>
+      <button class='btn-copy '+${i} id=${i} data-clipboard-text=${urlShort}>Copy</button>
+      `;
+    }
+    setTimeout(() => {
+      shorterns.appendChild(divContainer);
+    }, 100);
+  });
+}
+
+document.querySelector(".shorterns-urls__container").addEventListener("click", (e) => {
+  if (e.target.className === "btn-copy") {
+    let ids = e.target.id;
+   /*  var clipboard = new ClipboardJS();
+    clipboard.on("success", function (e) {
+      console.info("Action:", e.action);
+      console.info("Text:", e.text);
+      console.info("Trigger:", e.trigger);
+
+      e.clearSelection();
+    });
+
+    clipboard.on("error", function (e) {
+      console.error("Action:", e.action);
+      console.error("Trigger:", e.trigger);
+    }); */
+  }
+}); /* var clipboard = new ClipboardJS(".btn-copy");
+
+clipboard.on("success", function (e) {
+  console.info("Action:", e.action);
+  console.info("Text:", e.text);
+  console.info("Trigger:", e.trigger);
+
+  e.clearSelection();
+});
+
+clipboard.on("error", function (e) {
+  console.error("Action:", e.action);
+  console.error("Trigger:", e.trigger);
+}); */
+
+/* document.querySelectorAll(".btn-copy").forEach('')
+ */ async function getUrl(url) {
   let response = [];
   await fetch("https://rel.ink/api/links/", {
     headers: {
