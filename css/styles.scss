@@ -3,7 +3,7 @@ $DarkViolet: hsl(257, 27%, 26%);
 
 /* ### Secondary */
 
-$Red: hsl(0, 87%, 67%);
+$Red: #f46262;
 
 // ### Neutral
 $Gray: hsl(0, 0%, 75%);
@@ -224,6 +224,21 @@ body {
   &__container {
     display: grid;
     row-gap: 2em;
+    .container-x{
+      display: flex;
+      justify-content: space-between;
+      img{
+        opacity: .1;
+        transition: .5s ease;
+        position: relative;
+        top: -10px;
+        left: 10px;
+        &:hover{
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+    }
     .shorterns-urls__card {
       transition: 1s ease;
       position: relative;

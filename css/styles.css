@@ -199,6 +199,21 @@ body {
   display: grid;
   row-gap: 2em;
 }
+.shorterns-urls__container .container-x {
+  display: flex;
+  justify-content: space-between;
+}
+.shorterns-urls__container .container-x img {
+  opacity: 0.1;
+  transition: 0.5s ease;
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
+.shorterns-urls__container .container-x img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
 .shorterns-urls__container .shorterns-urls__card {
   transition: 1s ease;
   position: relative;

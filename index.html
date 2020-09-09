@@ -7,9 +7,11 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
     <header class="header">
@@ -26,6 +28,7 @@
             <li><a class="menu__button log" href="#">Sign Up</a></li>
           </ul>
           <label for="menu" class="menu__button">
+            <div id="bm"></div>
             <img src="./img/ham-logo.svg" height="25px" alt="ham" />
           </label>
         </div>
@@ -62,8 +65,6 @@
       <section class="shorterns-urls">
         <div class="wrapper">
           <div class="shorterns-urls__container">
-
-
           </div>
         </div>
       </section>
@@ -162,7 +163,7 @@
       </div>
       <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Eduardo Guette</a>.</div>
     </footer>
-   <!--  <script src="/vendor/clipboard.js-master/dist/clipboard.min.js"></script> -->
+    <!--  <script src="/vendor/clipboard.js-master/dist/clipboard.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
 
     <script src="./js/main.js"></script>
