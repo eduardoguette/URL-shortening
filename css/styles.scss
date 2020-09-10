@@ -223,6 +223,8 @@ body {
   }
   &__container {
     display: grid;
+    justify-content: center;
+    align-items: center;
     row-gap: 2em;
     .container-x{
       display: flex;

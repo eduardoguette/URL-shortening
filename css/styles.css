@@ -197,6 +197,8 @@ body {
 }
 .shorterns-urls__container {
   display: grid;
+  justify-content: center;
+  align-items: center;
   row-gap: 2em;
 }
 .shorterns-urls__container .container-x {

@@ -1,12 +1,10 @@
-
-
 const $btn = document.getElementById("shortern__btn");
 const $form = document.querySelector("form");
 const mensajeError = document.querySelector(".error-input");
 const shorterns = document.querySelector(".shorterns-urls__container");
 
 $form.addEventListener("submit", (e) => {
-  let inputForm = document.getElementById("shortern__input").value.trim()
+  let inputForm = document.getElementById("shortern__input").value.trim();
   e.preventDefault();
   let newShorten = "";
   if (inputForm === "") {
@@ -16,15 +14,18 @@ $form.addEventListener("submit", (e) => {
       $input = "";
       newShorten = data[0];
       let urlShort = "https://rel.ink/" + newShorten.hashid;
-      if (inputForm.length > 35) {
-        var url_cor = newShorten.url.slice(0, 35) + "...";
+      if (inputForm.length > 32) {
+        var url_cor = newShorten.url.slice(0, 32) + "...";
       } else {
         url_cor = inputForm;
       }
       let divContainer = document.createElement("div");
       divContainer.className = "shorterns-urls__card animate__animated animate__slideInLeft";
       divContainer.innerHTML = `
+          <div class="container-x">
           <a href=${newShorten.url} class="shorterns-urls__url">${url_cor}</a>
+          <img src="./img/x.svg" height="15" alt="x">
+          </div>
           <hr class="separador" />
           <a href=${urlShort} class="short-url">${urlShort}</a>
           <button class="btn-copy" data-clipboard-text=${urlShort}>Copy</button>
@@ -52,8 +53,8 @@ function render() {
     let urlShort = "https://rel.ink/" + elem.hashid;
     let divContainer = document.createElement("div");
     divContainer.className = "shorterns-urls__card animate__animated animate__slideInLeft";
-    var url_cor = elem.url.slice(0, 35) + "...";
-    if (elem.url.length > 35) {
+    var url_cor = elem.url.slice(0, 32) + "...";
+    if (elem.url.length > 32) {
       divContainer.innerHTML = `
       <div class="container-x">
       <a href=${elem.url} class="shorterns-urls__url">${url_cor}</a>
@@ -118,4 +119,9 @@ function CopyClipboard() {
 }
 CopyClipboard();
 
-
+document.querySelector(".shorterns-urls__container").addEventListener("click", (e) => {
+  if (e.target.tagName === "IMG") {
+    e.target.parentElement.parentElement.remove();
+    
+  }
+});
