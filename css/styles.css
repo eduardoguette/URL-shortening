@@ -270,11 +270,16 @@ body {
 .statistics {
   margin-top: -6em;
   background-color: #f0f1f6;
-  padding-bottom: 3em;
+  padding-bottom: 4em;
+  position: relative;
+  z-index: -9;
 }
 .statistics .wrapper {
   width: 90%;
   margin: auto;
+}
+.statistics .wrapper .statistics__advanced {
+  margin-bottom: 3em;
 }
 .statistics .wrapper .statistics__advanced h2 {
   padding-top: 150px;
@@ -293,7 +298,6 @@ body {
   margin: auto;
   background-color: white;
   margin: 3em auto;
-  margin-bottom: 5em;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -301,21 +305,31 @@ body {
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 6em;
+  position: relative;
+  z-index: -8;
 }
 .statistics .wrapper .statistics__card .statistics__card-container-image {
-  position: relative;
-  top: -40px;
-  height: 85px;
-  width: 85px;
+  height: 75px;
+  width: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100px;
   background-color: #3b3054;
+  margin-top: -40px;
 }
 .statistics .wrapper .statistics__card .statistics__card-container-image img {
-  padding: 1.3em;
-  width: 90px;
+  height: 35px;
+}
+.statistics .wrapper .statistics__card div[class=statistics__card-container-image]::before {
+  content: "";
+  height: 90px;
+  width: 10px;
+  position: absolute;
+  margin-top: -120px;
+  z-index: -1;
+  background-color: #2acfcf;
 }
 .statistics .wrapper .statistics__card h3 {
   font-size: 1.3em;
@@ -327,14 +341,6 @@ body {
   font-size: 0.85em;
   padding: 1em 0 3em 0;
 }
-.statistics .wrapper div[class=statistics__card]::before {
-  content: "";
-  height: 90px;
-  width: 8px;
-  position: relative;
-  top: -90px;
-  background-color: #2acfcf;
-}
 
 .boost__container {
   height: 300px;
@@ -345,7 +351,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -100px;
+  margin-top: -20px;
 }
 .boost__container h2 {
   color: white;
