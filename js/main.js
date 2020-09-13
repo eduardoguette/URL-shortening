@@ -145,12 +145,8 @@ document.querySelector('.shorterns-urls__container').addEventListener('click', (
 })
 
 function seeLoading() {
-  let tmpImg = document.createElement('img')
-  tmpImg.className = 'tmpImg'
-  tmpImg.setAttribute('src', '../img/spinner-apple.gif')
-  tmpImg.setAttribute('height', '40')
-  document.querySelector('#shortern__btn').appendChild(tmpImg)
+  document.querySelector('.loading').style.display = 'block'
   setTimeout(() => {
-    tmpImg.remove()
+    document.querySelector('.loading').style.display = 'none'
   }, 2000)
 }

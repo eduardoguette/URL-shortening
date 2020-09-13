@@ -195,6 +195,9 @@ body {
   font-weight: 600;
   font-size: 0.8em;
 }
+.shortern .wrapper .shortern__container button .loading {
+  display: none;
+}
 
 .shorterns-urls {
   background-color: #f0f1f6;
