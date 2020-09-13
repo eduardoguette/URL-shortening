@@ -1,6 +1,6 @@
 $Cyan: hsl(180, 66%, 49%);
 $DarkViolet: hsl(257, 27%, 26%);
-
+$btnHover: #9be3e2;
 /* ### Secondary */
 
 $Red: #f46262;
@@ -29,6 +29,7 @@ body {
 
 @mixin btn-ppal {
   font-family: $font-family;
+  font-weight: 600;
   width: 180px;
   max-width: 100%;
   padding: 14px 24px;
@@ -38,6 +39,7 @@ body {
   color: white;
   font-size: 0.9em;
   letter-spacing: 0.04em;
+  cursor: pointer;
 }
 
 .header {
@@ -65,6 +67,7 @@ body {
         transition: 0.4s ease;
       }
       & ~ .menu {
+        --animate-duration: 0.5s;
         display: block;
         height: 385px;
         background-color: $DarkViolet;
@@ -78,6 +81,7 @@ body {
         width: 325px;
         max-width: 100%;
         display: block;
+        transition: 1s ease;
         .separador {
           margin: auto;
           width: 80%;
@@ -105,6 +109,9 @@ body {
             background-color: $Cyan;
             border-radius: 100px;
             font-size: 1em;
+            &:hover {
+              background-color: $btnHover;
+            }
           }
         }
       }
@@ -149,6 +156,10 @@ body {
       }
       .btn__ppal {
         @include btn-ppal();
+        margin-bottom: 4em;
+        &:hover {
+          background-color: $btnHover;
+        }
       }
     }
   }
@@ -169,6 +180,7 @@ body {
       background: url('../img/bg-shorten-mobile.svg') top -30px left 70px no-repeat;
       background-size: contain;
       background-color: $DarkViolet;
+      transition: 1s ease;
       .error-input {
         color: $Red;
         font-size: 0.8em;
@@ -296,14 +308,16 @@ body {
 .statistics {
   margin-top: -6em;
   background-color: $GrayBack;
-  padding-bottom: 4em;
+  padding-bottom: 1em;
   position: relative;
   z-index: -9;
   .wrapper {
     width: 90%;
     margin: auto;
     .statistics__advanced {
-      margin-bottom: 3em;
+      margin-bottom: 2em;
+      position: relative;
+      top: -40px;
       h2 {
         padding-top: 150px;
         font-size: 1.4em;
@@ -327,8 +341,7 @@ body {
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      border-radius: 5px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
       margin-bottom: 6em;
       position: relative;
       z-index: -8;
@@ -348,7 +361,7 @@ body {
       div[class='statistics__card-container-image']::before {
         content: '';
         height: 90px;
-        width: 10px;
+        width: 8px;
         position: absolute;
         margin-top: -120px;
         z-index: -1;
@@ -357,6 +370,7 @@ body {
       h3 {
         font-size: 1.3em;
         color: $VeryDarkBlue;
+        padding-top: 1.5em;
       }
       p {
         width: 80%;
@@ -373,6 +387,7 @@ body {
     height: 300px;
     width: 100%;
     background: url('../img/bg-boost-mobile.svg') center center no-repeat;
+    background-size: cover;
     background-color: $DarkViolet;
     display: flex;
     flex-direction: column;
@@ -388,6 +403,9 @@ body {
     button {
       @include btn-ppal();
       margin-top: 1.3em;
+      &:hover {
+        background-color: $btnHover;
+      }
     }
   }
 }
@@ -413,7 +431,7 @@ body {
       li {
         list-style: none;
         &:nth-child(1) {
-          padding-bottom: 1em;
+          padding-bottom: 0.7em;
         }
         a {
           opacity: 0.6;
@@ -427,6 +445,23 @@ body {
           color: white;
           opacity: 1;
           font-weight: 600;
+        }
+      }
+    }
+    ul.social {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      padding: 1em 0 2em 0;
+      li {
+        margin: 0;
+        padding: 0;
+        margin: 0 0.7em;
+        a {
+          opacity: 1;
         }
       }
     }

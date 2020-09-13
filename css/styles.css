@@ -37,6 +37,7 @@ body {
   transition: 0.4s ease;
 }
 .header .menu__checkbox:checked ~ .menu {
+  --animate-duration: 0.5s;
   display: block;
   height: 385px;
   background-color: #3b3054;
@@ -50,6 +51,7 @@ body {
   width: 325px;
   max-width: 100%;
   display: block;
+  transition: 1s ease;
 }
 .header .menu__checkbox:checked ~ .menu .separador {
   margin: auto;
@@ -79,6 +81,9 @@ body {
   background-color: #2acfcf;
   border-radius: 100px;
   font-size: 1em;
+}
+.header .menu__checkbox:checked ~ .menu li .menu__button:hover {
+  background-color: #9be3e2;
 }
 
 .hero__container {
@@ -119,6 +124,7 @@ body {
 }
 .hero__container .wrapper .btn__ppal {
   font-family: "Poppins", sans-serif;
+  font-weight: 600;
   width: 180px;
   max-width: 100%;
   padding: 14px 24px;
@@ -128,6 +134,11 @@ body {
   color: white;
   font-size: 0.9em;
   letter-spacing: 0.04em;
+  cursor: pointer;
+  margin-bottom: 4em;
+}
+.hero__container .wrapper .btn__ppal:hover {
+  background-color: #9be3e2;
 }
 
 .shortern {
@@ -147,6 +158,7 @@ body {
   background: url("../img/bg-shorten-mobile.svg") top -30px left 70px no-repeat;
   background-size: contain;
   background-color: #3b3054;
+  transition: 1s ease;
 }
 .shortern .wrapper .shortern__container .error-input {
   color: #f46262;
@@ -270,7 +282,7 @@ body {
 .statistics {
   margin-top: -6em;
   background-color: #f0f1f6;
-  padding-bottom: 4em;
+  padding-bottom: 1em;
   position: relative;
   z-index: -9;
 }
@@ -279,7 +291,9 @@ body {
   margin: auto;
 }
 .statistics .wrapper .statistics__advanced {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
+  position: relative;
+  top: -40px;
 }
 .statistics .wrapper .statistics__advanced h2 {
   padding-top: 150px;
@@ -303,8 +317,7 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   margin-bottom: 6em;
   position: relative;
   z-index: -8;
@@ -325,7 +338,7 @@ body {
 .statistics .wrapper .statistics__card div[class=statistics__card-container-image]::before {
   content: "";
   height: 90px;
-  width: 10px;
+  width: 8px;
   position: absolute;
   margin-top: -120px;
   z-index: -1;
@@ -334,6 +347,7 @@ body {
 .statistics .wrapper .statistics__card h3 {
   font-size: 1.3em;
   color: #35323e;
+  padding-top: 1.5em;
 }
 .statistics .wrapper .statistics__card p {
   width: 80%;
@@ -346,6 +360,7 @@ body {
   height: 300px;
   width: 100%;
   background: url("../img/bg-boost-mobile.svg") center center no-repeat;
+  background-size: cover;
   background-color: #3b3054;
   display: flex;
   flex-direction: column;
@@ -361,6 +376,7 @@ body {
 }
 .boost__container button {
   font-family: "Poppins", sans-serif;
+  font-weight: 600;
   width: 180px;
   max-width: 100%;
   padding: 14px 24px;
@@ -370,7 +386,11 @@ body {
   color: white;
   font-size: 0.9em;
   letter-spacing: 0.04em;
+  cursor: pointer;
   margin-top: 1.3em;
+}
+.boost__container button:hover {
+  background-color: #9be3e2;
 }
 
 .footer {
@@ -398,7 +418,7 @@ body {
   list-style: none;
 }
 .footer__container ul li:nth-child(1) {
-  padding-bottom: 1em;
+  padding-bottom: 0.7em;
 }
 .footer__container ul li a {
   opacity: 0.6;
@@ -412,6 +432,23 @@ body {
   color: white;
   opacity: 1;
   font-weight: 600;
+}
+.footer__container ul.social {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  padding: 1em 0 2em 0;
+}
+.footer__container ul.social li {
+  margin: 0;
+  padding: 0;
+  margin: 0 0.7em;
+}
+.footer__container ul.social li a {
+  opacity: 1;
 }
 .footer .attribution {
   color: white;

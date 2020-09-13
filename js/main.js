@@ -3,15 +3,26 @@ const $form = document.querySelector('form')
 const mensajeError = document.querySelector('.error-input')
 const shorterns = document.querySelector('.shorterns-urls__container')
 
+const $menuButtom = document.querySelector('label.menu__button')
+
+$menuButtom.addEventListener('click', (e) => {
+  if (document.querySelector('ul.menu').className != 'menu animate__animated animate__fadeInRight') document.querySelector('ul.menu').className = 'menu animate__animated animate__fadeInRight'
+})
+
+//Submit form
 $form.addEventListener('submit', (e) => {
-  let inputForm = document.getElementById('shortern__input').value.trim()
   e.preventDefault()
+  let inputForm = document.getElementById('shortern__input').value.trim()
   let newShorten = ''
   if (inputForm === '') {
     mensajeError.style.display = 'Block'
+    setTimeout(() => {
+      mensajeError.style.display = 'none'
+    }, 2000)
   } else {
+    seeLoading()
     getUrl(inputForm).then((data) => {
-      $input = ''
+      document.getElementById('shortern__input').value = ''
       newShorten = data[0]
       let urlShort = 'https://rel.ink/' + newShorten.hashid
       if (inputForm.length > 32) {
@@ -99,34 +110,47 @@ async function getUrl(url) {
 }
 
 // Función para copiar url
-function CopyClipboard() {
-  document.querySelector('.shorterns-urls__container').addEventListener('click', (e) => {
-    e.stopPropagation()
-    var btns = document.querySelectorAll('.btn-copy')
-    var clipboard = new ClipboardJS(btns)
-    clipboard.on('success', function (e) {
-      e.trigger.innerHTML = 'Copied!'
-      e.trigger.style.backgroundColor = '#3b3054'
-      setTimeout(() => {
-        e.trigger.innerHTML = 'Copy'
-        e.trigger.style.backgroundColor = '#2acfcf'
-      }, 500)
-    })
-    clipboard.on('error', function (e) {
-      console.log(e)
-    })
+document.querySelector('.shorterns-urls__container').addEventListener('click', (e) => {
+  CopyClipboard(e)
+})
+var btns = document.querySelectorAll('.btn-copy')
+var clipboard = new ClipboardJS(btns)
+
+function CopyClipboard(e) {
+  clipboard.on('success', function (e) {
+    e.trigger.innerHTML = 'Copied!'
+    e.trigger.style.backgroundColor = '#3b3054'
+    setTimeout(() => {
+      e.trigger.innerHTML = 'Copy'
+      e.trigger.style.backgroundColor = '#2acfcf'
+    }, 500)
+  })
+  clipboard.on('error', function (e) {
+    console.log(e)
   })
 }
-CopyClipboard()
 
+// Elimina del dom y del localStorage los url seleccionados
 document.querySelector('.shorterns-urls__container').addEventListener('click', (e) => {
   if (e.target.tagName === 'IMG') {
     let urlId = e.target.parentElement.parentElement.querySelector('.short-url').textContent.split('/').pop().trim()
     let LS = JSON.parse(localStorage.getItem('arraysShorten'))
-    let newArray = LS.filter(({ hashid }, index) => hashid.indexOf(urlId) !== index)
-    console.log(newArray)
-    console.log(urlId)
+    let newArray = LS.filter(({ hashid }, index) => hashid !== urlId)
     localStorage.setItem('arraysShorten', JSON.stringify(newArray))
-    //  e.target.parentElement.parentElement.remove()
+    e.target.parentElement.parentElement.className = 'shorterns-urls__card animate__animated animate__fadeOutLeft'
+    setTimeout(() => {
+      e.target.parentElement.parentElement.remove()
+    }, 700)
   }
 })
+
+function seeLoading() {
+  let tmpImg = document.createElement('img')
+  tmpImg.className = 'tmpImg'
+  tmpImg.setAttribute('src', '../img/spinner-apple.gif')
+  tmpImg.setAttribute('height', '40')
+  document.querySelector('#shortern__btn').appendChild(tmpImg)
+  setTimeout(() => {
+    tmpImg.remove()
+  }, 2000)
+}
